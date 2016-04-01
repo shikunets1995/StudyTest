@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-
-        RecyclerAdapter adapter = new RecyclerAdapter();
-        recyclerView.setAdapter(adapter);
-        adapter.setData(getData());
+//        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+//
+//        RecyclerAdapter adapter = new RecyclerAdapter();
+//        recyclerView.setAdapter(adapter);
+//        adapter.setData(getData());
 
 
     }
@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.add) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, Fragment0.newInstance("Hello"))
+                    .replace(R.id.fragment0, Fragment0.newInstance("Hello"))
                     .commit();
         } else if (item.getItemId() == R.id.remove){
-            Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+            Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment0);
             if (fragment != null) {
                 getSupportFragmentManager().beginTransaction()
                         .remove(fragment)

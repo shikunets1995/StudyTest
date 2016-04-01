@@ -4,17 +4,25 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.support.v7.widget.LinearLayoutManager.*;
+
 
 public class Fragment0 extends Fragment {
     final String LOG_TAG = "myLogs";
 
     public static final String PARAM_TEXT = "param_text";
+    private List<String> data;
 
     public static Fragment0 newInstance(String text) {
 
@@ -34,8 +42,16 @@ public class Fragment0 extends Fragment {
         TextView textView = (TextView) view.findViewById(R.id.textView1);
         textView.setText(text);
 
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+
+        RecyclerAdapter adapter = new RecyclerAdapter();
+        recyclerView.setAdapter(adapter);
+        adapter.setData(getData());
+
 
     }
+
 
     @Override
     public void onAttach(Context context) {
@@ -92,5 +108,17 @@ public class Fragment0 extends Fragment {
     public void onDetach() {
         super.onDetach();
         Log.d(LOG_TAG, "Fragment0 onDetach");
+    }
+
+
+    public List<String> getData() {
+        List<String> data = new ArrayList<>();
+        for (int i = 0; i < 99; ++i) {
+            data.add(" " +
+                    "" + i);
+
+
+        }
+        return data;
     }
 }
