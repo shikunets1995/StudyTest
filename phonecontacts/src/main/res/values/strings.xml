@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PhoneContacts</string>
+
+    <string-array name="contlist">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+    </string-array>
+</resources>

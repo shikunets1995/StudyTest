@@ -1,1 +1,1 @@
-include ':RecyclerApp'
+include ':RecyclerApp', ':testprovider', ':phonecontacts'
