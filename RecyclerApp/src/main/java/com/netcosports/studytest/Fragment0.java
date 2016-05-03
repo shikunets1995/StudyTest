@@ -1,6 +1,5 @@
 package com.netcosports.studytest;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,8 +13,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.support.v7.widget.LinearLayoutManager.*;
 
 
 public class Fragment0 extends Fragment {
@@ -45,7 +42,7 @@ public class Fragment0 extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
-        RecyclerAdapter adapter = new RecyclerAdapter();
+        Adapter0 adapter = new Adapter0();
         recyclerView.setAdapter(adapter);
         adapter.setData(getData());
 
@@ -67,7 +64,7 @@ public class Fragment0 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d(LOG_TAG, "Fragment0 onCreateView");
-        return inflater.inflate(R.layout.fragment0, container, false);
+        return inflater.inflate(R.layout.fragment_0, container, false);
     }
 
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -107,13 +104,14 @@ public class Fragment0 extends Fragment {
 
     public void onDetach() {
         super.onDetach();
+        super.onDetach();
         Log.d(LOG_TAG, "Fragment0 onDetach");
     }
 
 
     public List<String> getData() {
         List<String> data = new ArrayList<>();
-        for (int i = 0; i < 99; ++i) {
+        for (int i = 0; i < 16; ++i) {
             data.add(" " +
                     "" + i);
 

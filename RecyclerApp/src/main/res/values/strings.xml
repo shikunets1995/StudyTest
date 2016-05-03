@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">StudyTest</string>
     <string name="frag1_text">fragment0</string>
+
+    <string name="country_belarus">Belarus</string>
+    <string name="country_canada">Canada</string>
+    <string name="country_tpe">Thaiwan</string>
+    <string name="country_brazil">Brazil</string>
+
+    <string name="updated">Updated</string>
+    <string name="switch1">Switch Text</string>
+
 </resources>
