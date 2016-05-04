@@ -5,9 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Шикунец on 03.05.2016.
@@ -15,6 +21,7 @@ import android.widget.TextView;
 public class CounrtryInfoActivity extends AppCompatActivity {
 
     private static final String EXTRA_COUNTRY = "country";
+    InfoAdapter infoAdapter = new InfoAdapter();
 
     public static Intent getLaunchIntent(Context context, Country country) {
         return new Intent(context, CounrtryInfoActivity.class)
@@ -33,12 +40,15 @@ public class CounrtryInfoActivity extends AppCompatActivity {
         toolbar.setTitle(country.name);
         imageView1.setImageResource(country.flagId);
 
-//        imageView1.setImage
-
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(infoAdapter);
+        infoAdapter.setData(country);
 
 
 
     }
+
 
 
 }
